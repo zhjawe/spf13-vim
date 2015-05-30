@@ -1,0 +1,38 @@
+set wrap    "我需要折行
+set splitbelow    "split在下边
+set mouse=""    "不要鼠标选择
+
+"编码设置
+set enc=utf-8
+set fenc=utf-8
+set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,latin-1
+
+"快捷换行
+nmap <c-up> ddkP
+nmap <c-down> ddp
+vmap <c-up> xkP`[V`]
+vmap <c-down> xp`[V`]
+
+set foldmethod=marker "folder
+
+set t_Co=256 "如果是在模拟终端需要把颜色设置成256色
+
+"cscope 快捷映射
+if has("cscope")
+    set cscopetag
+    set csto=0
+    if filereadable("cscope.out")
+        cs add cscope.out
+    endif
+    set csverb
+    nmap s :cs find s =expand("")..
+    nmap g :cs find g =expand("")..
+    nmap c :cs find c =expand("")..
+    nmap t :cs find t =expand("")..
+    nmap e :cs find e =expand("")..
+    nmap f :cs find f =expand("")..
+    nmap i :cs find i ^=expand("")$
+    nmap d :cs find d =expand("")
+endif
+</c-down></c-up></c-down></c-up>
